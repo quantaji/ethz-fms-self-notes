@@ -1,5 +1,5 @@
 # Personal Notes for Fundamentals of Mathematical Statistics AS 2021
-1. I use MWeb as edition, the key word for Tex expression is ```$\LaTeX$``` ``` ``\LaTeX`` ``` and
+1. I use MWeb as markdown editor, the key word for Tex expression is ```$\LaTeX$``` ``` ``\LaTeX`` ``` and
 
 ```
     ``` math
