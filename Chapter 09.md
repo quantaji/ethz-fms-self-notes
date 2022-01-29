@@ -58,7 +58,7 @@ Two small lemmas are provided here for what is the set of equivariant estimator 
         1. (in the loss we already assume ``\theta`` is known)
     2. there exists a ﬁxed equivariant estimator ``d(X)`` with ﬁnite risk. 
     3. let ``Y=X - d(X) =:\eta(X) \in \mathbb{R}^n``, 
-    4. If ``g(Y):=\arg \min _{v} E\left[L_{0}(v+d(\epsilon)) \mid Y\right]`` exists, then
+    4. If ``g(Y):=\arg \min _{v} \mathbb{E}_\epsilon\left[L_{0}(v+d(\epsilon)) \mid \eta(\epsilon) = Y\right]`` exists, then
         1. PS: here ``g`` is a function of ``Y``, the ``v`` above is a number in ``\mathbb{R}``
     5. ``T^{*}(X):=g(Y)+d(X) = g(\eta(X))+d(X)`` is UMRE
 - Proof

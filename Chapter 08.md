@@ -44,7 +44,7 @@ Proof
     1. ``S`` is sufficient for ``\theta``
     2. action space ``\mathcal{A} \subset \mathbb{R}^{p}`` is convex
     3. for each ``\theta``, the map ``a \mapsto L(\theta, a)`` is convex. 
-- Let ``d: \mathcal{X} \rightarrow \mathcal{A}`` be a **non-randomize** decision, and deﬁne new decision rule as ``d'(s) := E(d(X) \mid S=s)`` (assumed to exist). Then ``R\left(\theta, d^{\prime}\right) \leq R(\theta, d)``
+- Let ``d: \mathcal{X} \rightarrow \mathcal{A}`` be a **non-randomize** decision, and deﬁne new **non-randomized** decision rule as ``d'(s) := E(d(X) \mid S=s)`` (assumed to exist). Then ``R\left(\theta, d^{\prime}\right) \leq R(\theta, d)``
 
 Proof
 1. First since action space is convex, ``d'(s) := E(d(X) \mid S=s)`` always exists

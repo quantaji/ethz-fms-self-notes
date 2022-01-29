@@ -44,6 +44,9 @@ question be like: give me the definition, show sth is ad minimax bayes, construc
     1. ``R\left(\theta, d^{\prime}\right) \leq R(\theta, d), \forall \theta``
     2. and ``\exists \theta: R\left(\theta, d^{\prime}\right)<R(\theta, d)`` 
     - When there exists a ``d'`` that is strictly better than ``d``, then ``d`` is called *inadmissible*.
+- **Definition** A decision ``d'`` is called *admissible* than ``d`` if **for all** ``d'`` either
+    1. ``\exists \theta_0`` such that ``R\left(\theta_0, d^{\prime}\right) > R(\theta_0, d),`` (``d`` strictly better than ``d'`` in some case, there might also be case where ``d'`` better than ``d``)
+    2. or ``\forall \theta: R\left(\theta, d^{\prime}\right) \geq R(\theta, d)`` (``d`` no worse than ``d'`` in all case)
 
 - **Notes** to test decision ``d`` is admissible, one has to take all possible ``d'`` into account.
 
@@ -98,7 +101,7 @@ question be like: give me the definition, show sth is ad minimax bayes, construc
 ## 10.4 Bayes decision
 - **Definition** The *Bayes risk* (with respect to the probability measure ``Π`` on parameter space ``\Theta``) is ``r(\Pi, d):=\int_{\Theta} R(\vartheta, d) d \Pi(\vartheta)``
     - if the distribution have density function ``w``, then ``r(\Pi, d)=\int_{\Theta} R(\vartheta, d) w(\vartheta) d \mu(\vartheta):=r_{w}(d)``
-- **Definition** A decision `d` is called Bayes (with respect to ``Π``) if ``r(\Pi, d)=\inf _{d^{\prime}} r\left(\Pi, d^{\prime}\right)``
+- **Definition** A decision ``d`` is called Bayes (with respect to ``Π``) if ``r(\Pi, d)=\inf _{d^{\prime}} r\left(\Pi, d^{\prime}\right)``
 
 
 ## 10.5 Construction of Bayes estimator
@@ -125,7 +128,7 @@ question be like: give me the definition, show sth is ad minimax bayes, construc
 - using lemma 10.5.1, we have ``l(x, \phi)=\phi w_{0} p_{0}(x) / p(x)+(1-\phi) w_{1} p_{1}(x) / p(x)`` for loss ``L\left(\theta_{0}, a\right):=a, L\left(\theta_{1}, a\right):=1-a, a \in\{0,1\}``.
 - then using the definition of ``d(x):=\arg \min _{a\in \mathcal{A}} l(x, a) `` we have 
     - ``\arg \min _{\phi} l(\cdot, \phi)= \begin{cases}1 & \text { if } w_{1} p_{1}>w_{0} p_{0} \\ q & \text { if } w_{1} p_{1}=w_{0} p_{0} \\ 0 & \text { if } w_{1} p_{1}<w_{0} p_{0}\end{cases}``
-    - another proof is that ``r_{w}(\phi)=w_{0} \int \phi p_{0}+w_{1}\left(1-\int \phi p_{1}\right) = =\int \phi\left(w_{0} p_{0}-w_{1} p_{1}\right)+w_{1}``
+    - another proof is that ``r_{w}(\phi)=w_{0} \int \phi p_{0}+w_{1}\left(1-\int \phi p_{1}\right) = \int \phi\left(w_{0} p_{0}-w_{1} p_{1}\right)+w_{1}``
         - So we choose ``\phi \in[0,1]`` to minimize ``\phi\left(w_{0} p_{0}-w_{1} p_{1}\right)``.
 - Note that ``2 r_{w}\left(\phi_{\text {Bayes }}\right)=1-\int\left|w_{1} p_{1}-w_{0} p_{0}\right|``. which means the risk is large if the two densities are close to each other.
 
